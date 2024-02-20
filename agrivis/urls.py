@@ -16,7 +16,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from market.views import home
+from market.views import home, qcl_data_view, qv_data_view, pp_data_view, fbs_data_view, ti_data_view, market_data_view, market_data_form_view, user_preferences_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+]
+
+urlpatterns = [
+    path('', home, name='home'),
+]
+
+urlpatterns = [
+    path('', home, name='home'),
+    path('market-data/Crops and Livestock Products/', qcl_data_view, name='qcl_data'),
+    path('market-data/Value of Agricultural Production/', qv_data_view, name='qv_data'),
+    path('market-data/Producer Prices/', pp_data_view, name='pp_data'),
+    path('market-data/Food Balance Sheets/', fbs_data_view, name='fbs_data'),
+    path('market-data/Trade Indices/', ti_data_view, name='ti_data'),
+    path('market-data/view/', market_data_view, name='market_data'),
+    path('market-data/form/', market_data_form_view, name='market_data_form'),
+    path('user-preferences/', user_preferences_view, name='user_preferences'),
 ]

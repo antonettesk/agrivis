@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrivis - Agricultural Data Visualization</title>
+    <!-- Add your CSS files here -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Agrivis Dashboard</h1>
+        <nav>
+            <!-- Navigation bar content -->
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'qcl_data' %}">Crops and Livestock Products</a></li>
+                <li><a href="{% url 'qv_data' %}">Value of Agricultural Production</a></li>
+                <li><a href="{% url 'pp_data' %}">Producer Prices</a></li>
+                <li><a href="{% url 'fbs_data' %}">Food Balance Sheets</a></li>
+                <li><a href="{% url 'ti_data' %}">Trade Indices</a></li>
+                <li><a href="{% url 'market_data_form' %}">Market Data Form</a></li>
+                <li><a href="{% url 'market_data' %}">Market Trends</a></li>
+                <li><a href="{% url 'user_preferences' %}">User Preferences</a></li>
+            </ul>
+
+            <!-- Add more navigation links as needed -->
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Dynamic content will be rendered here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+        <p>&copy; 2023 Agrivis. Empowering Agriculture with Data.</p>
+    </footer>
+
+    <!-- Add your JavaScript files here -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

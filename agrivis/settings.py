@@ -9,6 +9,10 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+# Add faostat path to environment set-up
+import sys
+sys.path.insert(0, 'Desktop\agrivis\market\libs\faostatpackage')
+
 
 from pathlib import Path
 
@@ -37,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'market',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
